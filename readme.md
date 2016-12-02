@@ -50,4 +50,4 @@ CREATE TABLE `kv` (
 
 刪除前還會提示確認唷 !
 
-![Image of screenshots 3](img/pic.jpg)
+![Image of screenshots 3](img/picc.jpg)
