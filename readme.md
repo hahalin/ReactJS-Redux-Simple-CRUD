@@ -33,7 +33,7 @@ CREATE TABLE `kv` (
 
 ## 使用的theme
 
-本來想用Bootstrap刻，很直接的用google搜尋free Bootstrap admin theme找到這頁順眼的 https://colorlib.com/wp/free-bootstrap-admin-dashboard-templates/，使用了裡面的siminta。
+本來想用Bootstrap刻，很直接的用google搜尋free Bootstrap admin theme找到這頁順眼的 [https://colorlib.com/wp/free-bootstrap-admin-dashboard-templates/](https://colorlib.com/wp/free-bootstrap-admin-dashboard-templates/)，使用了裡面的siminta。
 
 ## 如何測試這個範例
 
