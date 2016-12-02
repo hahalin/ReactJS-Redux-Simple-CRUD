@@ -28358,7 +28358,7 @@ webpackJsonp([0,1],[
 				}
 
 				if (mode === 1) {
-					this.props.add_kv(id, gp, v, sort);
+					this.props.add_kv(gp, v, sort);
 				}
 			}
 		}, {
@@ -28465,6 +28465,10 @@ webpackJsonp([0,1],[
 					actionV = '新增';
 				}
 
+				if (this.state.mode === 2) {
+					actionV = '修改';
+				}
+
 				return _react2.default.createElement(
 					'div',
 					{ className: 'modal fade', id: 'inputwin', tabindex: '-1', role: 'dialog', 'aria-labelledby': 'myModalLabel', 'aria-hidden': 'true' },
@@ -28485,7 +28489,6 @@ webpackJsonp([0,1],[
 								_react2.default.createElement(
 									'h4',
 									{ className: 'modal-title ', id: 'myModalLabel' },
-									'\u8ACB',
 									actionV,
 									'\u3010',
 									gpv,

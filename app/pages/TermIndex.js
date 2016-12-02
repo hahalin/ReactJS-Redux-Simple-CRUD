@@ -99,7 +99,7 @@ class TermIndex extends React.Component {
 
   		if (mode===1)
   		{
-  			this.props.add_kv(id,gp,v,sort)
+  			this.props.add_kv(gp,v,sort)
 		}
   	}
 
@@ -199,13 +199,18 @@ class TermIndex extends React.Component {
 	 		actionV='新增'
 	 	}
 
+	 	if (this.state.mode===2)
+	 	{
+	 		actionV='修改'
+	 	}
+
     	return (
     		<div className="modal fade" id="inputwin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div className="modal-dialog modal-md">
                     <div className="modal-content">
                         <div className="modal-header btn-info">
                             <button type="button" className="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h4 className="modal-title " id="myModalLabel">請{actionV}【{gpv}】資料</h4>
+                            <h4 className="modal-title " id="myModalLabel">{actionV}【{gpv}】資料</h4>
                         </div>
                         <div className="modal-body">
                         	<div className="panel-body">
