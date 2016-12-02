@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootsrtap Free Admin Template - SIMINTA | Admin Dashboad Template</title>
+    <!-- Core CSS - Include with every page -->
+    <link href="assets/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/plugins/pace/pace-theme-big-counter.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+      <link href="assets/css/main-style.css" rel="stylesheet" />
+
+      <style>
+
+        .titlefont
+        {
+            font-family: 'cwTeXHei', serif;
+        }
+
+        @font-face {
+          font-family: 'cwTeXHei';
+          font-style: normal;
+          font-weight: 500;
+          src: url(assets/fonts/cwTeXHei-zhonly.eot);
+          src: url(assets/fonts/cwTeXHei-zhonly.eot?#iefix) format('embedded-opentype'),
+               url(assets/fonts/cwTeXHei-zhonly.woff2) format('woff2'),
+               url(assets/fonts/cwTeXHei-zhonly.woff) format('woff'),
+               url(assets/fonts/cwTeXHei-zhonly.ttf) format('truetype');
+        }
+
+        li > a 
+        {
+            font-size:18px;
+        }
+
+        .table th
+        {
+            font-size:18px;
+            font-family: 'cwTeXHei', serif;
+        }
+        .table td
+        {
+            font-size:15px;
+        }
+
+        .form-group input,select > option ,label
+        {
+            font-size:15px;
+        }
+        .form-group label
+        {
+            font-size:15px;
+            font-family: 'cwTeXHei', serif;
+        }
+        .form-group select
+        {
+            font-size:15px;
+        }
+
+        #side-menu li
+        {
+            font-weight:500;
+            font-family: 'cwTeXHei', serif;
+        }
+
+         #side-menu li ul li
+        {
+            padding-left:35px;
+            
+        }
+
+        #reqwin  .modal-body
+        {
+            padding:5px;
+        }
+        #reqwin  .panel-body
+        {
+            padding-right:5px;
+            padding-left:5px;
+            padding-top:2px;
+            padding-bottom:2px;
+        }
+
+      </style>
+
+</head>
+
+<body id="thebody">
+    <!--  wrapper -->
+    <div id="wrapper">
+        <!-- navbar top -->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
+            <!-- navbar-header -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="demo.html">
+                    <label class="titlefont" style="font-size:22px;color:white;">
+                        台北昊德深層經絡按摩推拿館管理系統
+                    </label>
+                    <!-- <img src="assets/img/logo.png" alt="" /> -->
+                </a>
+            </div>
+            <!-- end navbar-header -->
+
+        </nav>
+        <!-- end navbar top -->
+
+        <!-- navbar side -->
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <!-- sidebar-collapse -->
+            <div class="sidebar-collapse">
+                <!-- side-menu -->
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <!-- user image section-->
+                        <div class="user-section">
+                            <div class="user-section-inner">
+                                <img src="assets/img/user.jpg" alt="">
+                            </div>
+                            <div class="user-info">
+                                <div class="titlefont" stylea="font-size:20px;">系統管理員<strong>林大頭</strong></div>
+                                <div class="user-text-online">
+                                    <!-- <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online -->
+                                </div>
+                            </div>
+                        </div>
+                        <!--end user image section-->
+                    </li>
+                    <li class="sidebar-search">
+                        <!-- search section-->
+                        <div class="input-group custom-search-form">
+                            <input type="text" class="form-control" placeholder="快速搜尋客戶...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                        <!--end search section-->
+                    </li>
+                    <li>
+                        <a href="#" style="font-size:18px;"><i class="fa fa-edit fa-fw"></i>顧客<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="demo.html">顧客資料</a>
+                            <li><a href="#">顧客表單</a>
+                        </ul>    
+                    </li>
+                    <li>
+                        <a href="#" style="font-size:18px;"><i class="fa fa-table fa-fw"></i>預約<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="demo.html">預約時程圖</a>
+                            <li><a href="#">年度預約表單</a>
+                        </ul>    
+                    </li>
+                    <li>
+                        <a href="#" style="font-size:18px;"><i class="fa fa-sitemap fa-fw"></i>會員<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="#">會員表單</a>
+                        </ul>    
+                    </li>
+                </ul>
+                <!-- end side-menu -->
+            </div>
+            <!-- end sidebar-collapse -->
+        </nav>
+        <!-- end navbar side -->
+        <!--  page-wrapper -->
+        <div id="page-wrapper">
+
+            <div class="row">
+                <!-- Page Header -->
+                <div class="col-lg-12">
+                    <h1 class="page-header titlefont">顧客資料</h1>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            
+                        </div>
+                        <div class="panel-body">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#reqlist" data-toggle="tab">主訴資料</a>
+                                </li>
+                                <li class=""><a href="#lifelist" data-toggle="tab">生活型態</a>
+                                </li>
+                                <li class=""><a href="#sportlist" data-toggle="tab">運動史</a>
+                                </li>
+                                <li class=""><a href="#bodylist" data-toggle="tab">體質史</a>
+                                </li>
+                                <li class=""><a href="#bookinglist" data-toggle="tab">預約紀錄</a>
+                                </li>
+                                <li class=""><a href="#massalist" data-toggle="tab">推拿紀錄</a>
+                                </li>
+                                <li class=""><a href="#cardlist" data-toggle="tab">購卡紀錄</a>
+                                </li>
+                                <li class=""><a href="#servicelist" data-toggle="tab">消費紀錄</a>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div class="tab-pane fade active in" id="reqlist">
+                                    <h4></h4>
+                                    <button type="button" class="btn btn-primary titlefont" id="btn-add-req" data-toggle="modal" data-target="#reqwin">新增</button>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-bordered table-hover" id="dataTables-example2" >
+                                            <thead>
+                                                <tr>
+                                                    <th>推拿次數</th>
+                                                    <th>主訴編號</th>
+                                                    <th>大部位</th>
+                                                    <th>小部位</th>
+                                                    <th>感覺</th>
+                                                    <th>頻率</th>
+                                                    <th>時間</th>
+                                                    <th>歷史</th>
+                                                    <th>備註</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="odd gradeX">
+                                                    <td class="center">1</td>
+                                                    <td class="center">1001</td>
+                                                    <td class="center">全身</td>
+                                                    <td class="center">無小部位</td>
+                                                    <td class="center">腰酸背痛</td>
+                                                    <td class="center">斷斷續續</td>
+                                                    <td class="center">幾小時</td>
+                                                    <td class="center">歷史123</td>
+                                                    <td class="center">備註123</td>
+                                                </tr>
+                                                <tr class="even gradeX">
+                                                    <td class="center">2</td>
+                                                    <td class="center">1001</td>
+                                                    <td class="center">全身</td>
+                                                    <td class="center">無小部位</td>
+                                                    <td class="center">腰酸背痛</td>
+                                                    <td class="center">斷斷續續</td>
+                                                    <td class="center">幾小時</td>
+                                                    <td class="center">歷史123</td>
+                                                    <td class="center">備註123</td>
+                                                </tr>                                                
+                                                <tr class="odd gradeX">
+                                                    <td class="center">3</td>
+                                                    <td class="center">1001</td>
+                                                    <td class="center">全身</td>
+                                                    <td class="center">無小部位</td>
+                                                    <td class="center">腰酸背痛</td>
+                                                    <td class="center">斷斷續續</td>
+                                                    <td class="center">幾小時</td>
+                                                    <td class="center">歷史123</td>
+                                                    <td class="center">備註123</td>
+                                                </tr>
+                                                <tr class="even gradeX">
+                                                    <td class="center">4</td>
+                                                    <td class="center">1001</td>
+                                                    <td class="center">全身</td>
+                                                    <td class="center">無小部位</td>
+                                                    <td class="center">腰酸背痛</td>
+                                                    <td class="center">斷斷續續</td>
+                                                    <td class="center">幾小時</td>
+                                                    <td class="center">歷史123</td>
+                                                    <td class="center">備註123</td>
+                                                </tr>   
+                                                 <tr class="odd gradeX">
+                                                    <td class="center">5</td>
+                                                    <td class="center">1001</td>
+                                                    <td class="center">全身</td>
+                                                    <td class="center">無小部位</td>
+                                                    <td class="center">腰酸背痛</td>
+                                                    <td class="center">斷斷續續</td>
+                                                    <td class="center">幾小時</td>
+                                                    <td class="center">歷史123</td>
+                                                    <td class="center">備註123</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                </table>
+                            </div>
+                                    
+                                </div>
+                                <div class="tab-pane fade" id="lifelist">
+                                    <h4>Profile Tab</h4>
+                                    
+                                </div>
+                                <div class="tab-pane fade" id="sportlist">
+                                    <h4>Messages Tab</h4>
+                                    
+                                </div>
+                                <div class="tab-pane fade" id="bodylist">
+                                    <h4>Settings Tab</h4>
+                                    
+                                </div>
+                                <div class="tab-pane fade" id="bookinglist">
+                                    <h4>Settings Tab</h4>
+                                    
+                                </div>
+                                <div class="tab-pane fade" id="massalist">
+                                    <h4>Settings Tab</h4>
+                                    
+                                </div>
+                                <div class="tab-pane fade" id="cardlist">
+                                    <h4>Settings Tab</h4>
+                                    
+                                </div>
+                                <div class="tab-pane fade" id="servicelist">
+                                    <h4>Settings Tab</h4>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--End Page Header -->
+            </div>
+
+            <div class="row">
+                 <div class="col-lg-6">
+                     <!--  Modals-->
+                     
+                       <div class="modal fade" id="reqwin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title" id="myModalLabel">主訴資料</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="panel-body">
+                                            <form role="form"  class="form-horizontal">
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-2 control-label">備註</label>
+                                                    <div class="col-sm-10">
+                                                        <textarea class="form-control" rows="3"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                        <label for="" class="col-sm-2 control-label">推拿次數</label>
+                                                        <div class="col-sm-3">
+                                                            <input class="form-control" placeholder="推拿次數">  
+                                                        </div>
+                                                        <label for="" class="col-sm-2 control-label">主訴編號</label>
+                                                        <div class="col-sm-3">
+                                                            <input class="form-control" placeholder="主訴編號">  
+                                                        </div>
+                                                </div>
+                                                 <div class="form-group">
+                                                    
+                                                </div>
+                                                 <div class="form-group row">
+                                                    <label for="inputEmail3" class="col-sm-2 control-label">大部位</label>
+                                                    <div class="col-sm-3">
+                                                      <select class="form-control">
+                                                          <option>全身</option>
+                                                          <option>四肢</option>
+                                                          <option>兩手</option>
+                                                          <option>兩腳</option>
+                                                          <option>頭部</option>
+                                                          <option>臉部</option>
+                                                          <option>頭肩</option>
+                                                        </select>
+                                                    </div>
+                                                    <label for="" class="col-sm-2 control-label">小部位</label>
+                                                    <div class="col-sm-3">
+                                                        <select class="form-control">
+                                                          <option>小部位123</option>
+                                                          <option>無</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                 <div class="form-group row">
+                                                    <label for="" class="col-sm-2 control-label">感覺</label>
+                                                    <div class="col-sm-3">
+                                                        <select class="form-control">
+                                                          <option>腰酸背痛</option>
+                                                          <option>悶</option>
+                                                        </select>
+                                                    </div>
+                                                    <label for="" class="col-sm-2 control-label">頻率</label>
+                                                    <div class="col-sm-3">
+                                                        <select class="form-control">
+                                                          <option>持續性</option>
+                                                          <option>斷斷續續</option>
+                                                          <option>偶爾</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="" class="col-sm-2 control-label">時間</label>
+                                                    <div class="col-sm-3">
+                                                        <select class="form-control">
+                                                          <option>幾分鐘</option>
+                                                          <option>幾小時</option>
+                                                        </select>
+                                                    </div>
+                                                    <label for="" class="col-sm-2 control-label">歷史</label>
+                                                    <div class="col-sm-3">
+                                                        <input class="form-control"   placeholder="歷史">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="span7 text-center">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                            <button type="button" class="btn btn-primary">儲存</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                     <!-- End Modals-->
+                </div>
+            </div>
+
+        </div>
+        <!-- end page-wrapper -->
+
+    </div>
+    <!-- end wrapper -->
+
+    <!-- Core Scripts - Include with every page -->
+    <script src="assets/plugins/jquery-1.10.2.js"></script>
+    <script src="assets/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="assets/plugins/pace/pace.js"></script>
+    <script src="assets/scripts/siminta.js"></script>
+    <script src="assets/plugins/dataTables/jquery.dataTables.js"></script>
+    <script src="assets/plugins/dataTables/dataTables.bootstrap.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+                //$('#dataTables-example').dataTable();
+            $.ajaxSetup({
+                error : function(jqXHR, textStatus, errorThrown) {
+                    if (jqXHR.status === 401) {
+                        alert("return login");
+                        console.log(textStatus);
+                        console.log(errorThrown);
+                        console.log(jqXHR);
+                        window.location="login.html";
+                    } else {
+                        alert("Error: " + textStatus + ": " + errorThrown);
+                    }
+                }
+            });
+
+            var token=localStorage.getItem("MassaToken");
+
+            var settings = {
+              "async": true,
+              "crossDomain": true,
+              "url": "http://"+api_url+"/ApiServer/api/example/users",
+              "method": "GET",
+              "headers": {
+                "Authorization": "Bearer "+token,
+                "content-type": "application/x-www-form-urlencoded",
+                "cache-control": "no-cache"
+              },
+              "data": ""
+            }
+            console.log('start ajax');
+            $.ajax(settings)
+            .success(function(r){
+                console.log('success begin');
+                console.log(r);
+                console.log('success end');
+            })
+            .error(function(r){
+                console.log('error begin');
+                console.log(r);
+                console.log('error end');
+            })
+            .done(function (response) {
+                console.log('done begin');
+                console.log(response);
+                console.log('done end');
+            });
+        });
+    </script>
+</body>
+
+</html>
+

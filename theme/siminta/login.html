@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootsrtap Free Admin Template - SIMINTA | Admin Dashboad Template</title>
+    <!-- Core CSS - Include with every page -->
+    <link href="assets/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/plugins/pace/pace-theme-big-counter.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/main-style.css" rel="stylesheet" />
+
+</head>
+
+<body class="body-Login-back">
+
+    <div class="container">
+       
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 text-center logo-margin ">
+              <img src="assets/img/logo.png" alt=""/>
+                </div>
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">                  
+                    <div class="panel-heading">
+                        <h3 class="panel-title">用戶登入</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form">
+                            <fieldset>
+                                <!-- <div class="form-group">
+                                    <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                                </div> -->
+                                <div class="form-group">
+                                    <input class="form-control" name="username" id="username" placeholder="帳號"> 
+                                    </input>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="密碼" name="password" id="password"
+                                    type="password" value="">
+                                </div>
+                                <!-- <div class="checkbox">
+                                    <label>
+                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                                    </label>
+                                </div> -->
+                                <!-- Change this to a button or input when using this as a form -->
+                                <!-- <a href="index.html" class="btn btn-lg btn-success btn-block">Login</a> -->
+                                <button type="button" class="btn btn-lg btn-success btn-block" id="btn-login">登入</button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">
+                    <i class="glyphicon glyphicon-question-sign"></i>
+                    
+                    <span>Modal title</span>
+                </h4>
+                </div>
+            <div class="modal-body">
+                <div class="row">
+                    <img width="65" src="assets/img/user.jpg" class="img-circle" style="float: left; margin-left: 10px; margin-right: 10px;" />
+                    <div style="float: left; right: 5px; left: 70px;"><span style="font-size: 16px; width: 100%; height: 100%;"></span></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="span7 text-center">
+                        <button class="btn btn-primary zIndex400 btn-lg" type="button" data-dismiss="modal">確   定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+     <!-- Core Scripts - Include with every page -->
+    <script src="assets/plugins/jquery-1.10.2.js"></script>
+    <script src="assets/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/plugins/metisMenu/jquery.metisMenu.js"></script>
+
+    <script type="text/javascript">
+
+
+        function BAlert(message) {
+            $('#myModal .modal-title i').removeClass('glyphicon-info-sign').addClass('glyphicon-question-sign');
+            $('#myModal .modal-title span').text('提示訊息');
+            $('#myModal .modal-body span').html(message);
+            $('#myModal').modal({
+                backdrop: 'static'
+            });
+        }
+
+        $(function(){
+            $('#btn-login').on('click',function(){
+                var data = { grant_type: "password", username: $('#username').val(), password: $('#password').val(), client_id: 'testclient', client_secret:'testpass', scope:'userinfo cloud file node' };
+                localStorage.removeItem("MassaToken");
+                $.post('http://localhost:8080/ApiServer/oauth2/PasswordCredentials', data, function (d){
+                    console.log("Get Access Token from client credentials => ", d);
+                    var dhtml=JSON.stringify(d);
+                },"json")
+                .success(function(r){
+                    console.log(r);
+                    //localStorage.setItem("MassaToken",r.access_token);
+                    localStorage.setItem("MassaToken",r.access_token);
+                    window.location="Demo.html";
+                })
+                .error(function(e){
+                    //BAlert(e.)
+                    var r=e.responseText;
+                    r=JSON.parse(r);
+                    BAlert(r.error_description);
+                    console.log(e);
+                });
+
+            });
+        });
+    </script>
+
+</body>
+
+</html>

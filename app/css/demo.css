@@ -1,0 +1,68 @@
+.titlefont
+{
+    font-family: 'cwTeXHei', serif;
+}
+
+/*@font-face {
+  font-family: 'cwTeXHei';
+  font-style: normal;
+  font-weight: 500;
+  src: url(../theme/siminta/assets/fonts/cwTeXHei-zhonly.eot);
+  src: url(../theme/siminta/assets/fonts/cwTeXHei-zhonly.eot?#iefix) format('embedded-opentype'),
+       url(../theme/siminta/assets/fonts/cwTeXHei-zhonly.woff2) format('woff2'),
+       url(../theme/siminta/assets/fonts/cwTeXHei-zhonly.woff) format('woff'),
+       url(../theme/siminta/assets/fonts/cwTeXHei-zhonly.ttf) format('truetype');
+}*/
+
+li > a 
+{
+    font-size:18px;
+}
+
+.table th
+{
+    font-size:18px;
+    font-family: 'cwTeXHei', serif;
+}
+.table td
+{
+    font-size:15px;
+}
+
+.form-group input,select > option ,label
+{
+    font-size:15px;
+}
+.form-group label
+{
+    font-size:15px;
+    font-family: 'cwTeXHei', serif;
+}
+.form-group select
+{
+    font-size:15px;
+}
+
+#side-menu li
+{
+    font-weight:500;
+    font-family: 'cwTeXHei', serif;
+}
+
+ #side-menu li ul li
+{
+    padding-left:35px;
+    
+}
+
+#reqwin  .modal-body
+{
+    padding:5px;
+}
+#reqwin  .panel-body
+{
+    padding-right:5px;
+    padding-left:5px;
+    padding-top:2px;
+    padding-bottom:2px;
+}
